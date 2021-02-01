@@ -1,0 +1,47 @@
+{% extends "dependencies.html" %}
+{% block dependencies %}
+
+<!-- This is the base layout for all the webpages on the site -->
+	<body>
+		<div class="container">
+
+			<!-- Flash messages -->
+			<div class="row">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							<div class="alert alert-{{ category }}">
+								{{ message }}
+							</div>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+
+			<!-- Header -->
+			{% include 'hf/headerimage.html' %}
+			{% include 'hf/headernavbar.html' %}
+
+			<!-- Create a new block called 'content', which we can
+				use to insert other webpage latouts -->
+			{% block content %}
+			{% endblock content %}
+
+			<!-- Footer -->
+			{% include 'hf/footer.html' %}
+
+		<!-- Javascript dependencies -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+		<!-- Begeutte box -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+		<script>
+			baguetteBox.run('.tz-gallery');
+		</script>
+
+
+	</body>
+
+{% endblock dependencies %}

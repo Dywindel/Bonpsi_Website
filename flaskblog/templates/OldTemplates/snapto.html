@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Game Title card -->
+    <div class="row px-1 pb-1 bg-pri">
+        <div class="col-12 px-1 pb-1">
+            <div class="tz-gallery">
+                <!-- Inside Box -->
+                <a class="lightbox" href="{{ url_for('static', filename='img/SNAPto_WebTitleIdea.png') }}">
+                    <img src="{{ url_for('static', filename='img/SNAPto_WebTitleIdea.png') }}" alt="Park" class="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Button -->
+    <div class="row bg-pri pl-2 pr-2">
+        <!-- First layer backing -->
+        <a href="{{ url_for('main.demo') }}">
+            <img class="d-block w-100" src="static/img/Snapto_GameImage_Demo_2.png">
+        </a>
+    </div>
+
+    <!-- Gallery box, [FixTo] weird margin between images -->
+    <div class="row bg-pri px-2 pt-2">
+
+        <div class="tz-gallery">
+            
+            <div class="row mb-2">
+                
+                <div class="col-md-4">
+                    <a class="lightbox" href="{{ url_for('static', filename='img/gallery/1.png') }}">
+                        <img src="{{ url_for('static', filename='img/gallery/1.png') }}" alt="Park" class="img-fluid">
+                    </a>
+                </div>
+                
+                <div class="col-md-4">
+                    <a class="lightbox" href="{{ url_for('static', filename='img/gallery/2.png') }}">
+                        <img src="{{ url_for('static', filename='img/gallery/2.png') }}" alt="Park" class="">
+                    </a>
+                </div>
+                
+                <div class="col-md-4">
+                    <a class="lightbox" href="{{ url_for('static', filename='img/gallery/3.png') }}">
+                        <img src="{{ url_for('static', filename='img/gallery/3.png') }}" alt="Park" class="">
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="row"> j
+
+                <div class="col-md-6">
+                    <a class="lightbox" href="{{ url_for('static', filename='img/gallery/4.png') }}">
+                        <img src="{{ url_for('static', filename='img/gallery/4.png') }}" alt="Park" class="">
+                    </a>
+                </div>
+                
+                <div class="col-md-6">
+                    <a class="lightbox" href="{{ url_for('static', filename='img/gallery/5.png') }}">
+                        <img src="{{ url_for('static', filename='img/gallery/5.png') }}" alt="Park" class="">
+                    </a>
+                </div>
+            
+            </div>
+    
+        </div>
+    </div>            
+
+{% endblock content %}

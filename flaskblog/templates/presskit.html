@@ -1,0 +1,60 @@
+{% extends "dependencies.html" %}
+{% block dependencies %}
+
+<!-- This is the plain page containing the Press Kit information for Bonpsi and the game -->
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-2 p-5">
+            </div>
+            <div class="col-8 bg-white p-5">
+
+                <div class="text-center mb-5">
+                    <img src="/static/img/SNAPto_Logo_V7.png" class="img-fluid w-75">
+                </div>
+
+                <div class="text-center mb-4">
+                    <h2>
+                        SNAPto - A Sokoban-Snapping Puzzle Game
+                    </h2>
+                </div>
+
+                <p class="text-justify">
+                    SNAPto is a sokobon-style puzzle game based around a snapping mechanic. Players are given a series of dense and deceptively simple puzzles
+                    with incrementally increasing difficulty. Each puzzle is unique in introducing a principle of 
+                    the game's core mechanics and each build upon each other. The player is asked to discover the 
+                    rules and story of this world through experimentation, but is never certain what that entails.
+                </p>
+
+                <p class="text-justify">
+                    The game is now available to play on <a class="a-2" href="https://bonpsi.itch.io/snapto" target="_blank">itch.io</a>.
+                </p>
+
+                <p class="text-justify">
+                    The game is designed by Luke Baker, a research associate working in glasgow. This work is inspired by Stephen Lavelle's game; <a class="a-2" href="https://www.stephenssausageroll.com/" target="_blank">Stephen's Sausage Roll</a>.
+                </p>
+
+                <div class="text font-weight-bold">
+                    Contact
+                </div>
+                <p class="text-justify">
+                    bonpsigames@gmail.com
+                </p>
+
+                <div class="text font-weight-bold">
+                    More Info
+                </div>
+                <span class="text-justify">
+                    Website: <a class="a-2" href="{{ url_for('main.home') }}" target="_blank">https://www.bonpsi.com</a><br>
+                    Twitter: <a class="a-2" href="https://www.twitter.com/bonpsigames" target="_blank">@Bonpsigames</a><br>
+                    Facebook: <a class="a-2" href="https://www.facebook.com/bonpsi" target="_blank">Facebook.com/Bonpsi</a>
+
+            </div>
+            <div class="col-2 p-5">
+            </div>
+        </div>
+
+    </div>
+
+{% endblock dependencies %}

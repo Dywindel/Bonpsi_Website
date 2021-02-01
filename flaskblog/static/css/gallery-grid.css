@@ -1,0 +1,77 @@
+.container.gallery-container {
+    background-color: #fff;
+    color: #35373a;
+    min-height: 200vh;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.06);
+}
+
+.container.gallery-container{
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+.lightbox{
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+.tz-gallery{
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+.gallery-container h1 {
+    text-align: center;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    max-width: 800px;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    color: #888;
+    font-size: 0px;
+}
+
+.tz-gallery {
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    margin: 0px 0px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+
+.tz-gallery .lightbox img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 0px rgba(0,0,0,0.3);
+}
+
+.tz-gallery img {
+    border-radius: 0px;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+
+@media(max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .container.gallery-container {
+        border-radius: 0;
+    }
+}

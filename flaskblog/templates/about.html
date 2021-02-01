@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<!-- Snapto Text information -->
+	<!-- We have to create two of these for different sized screens, hiding the other -->
+	<div class="row">
+		<!-- First layer backing -->
+		<div class="col-12 col-md-8 bg-pri">
+			<div class="row pb-2 pl-2 pr-2 pr-md-0">
+				<!-- Second layer backing -->
+				<div class="col-12 bg-sec">
+					<div class="row">
+						<div class="col-12 bg-sec">
+							<div class="row p-3">
+								<div class="col-12 px-3 py-2 bg-ter">
+									<div class="text-center text-ter-tex">
+										<span class="align-middle">
+											<h2>
+												Bonpsi is making games
+											</h2>
+											<p class="text-justify">
+												Welcome to the development blog for the studio Bonpsi (Bon–sigh or Bomp-sy). 
+												This tiny studio is focused on building exploration-based puzzle games whose 
+												mechanics are tied to the narrative of their world. Bonpsi loves making games 
+												that allow the player to explore at their own pace, while solving complex puzzles 
+												that are mentally challenging, but not tedious or unfair. Bonpsi also designs with 
+												accessability in mind; to brings games to players whose disabilities would 
+												otherwise make gaming difficult.
+											</p>
+											<p class="text-justify">
+												Bonpsi is run by Luke. Luke is human; follow on Twitter <a class="a-2" href="https://www.twitter.com/dywindel" target="_blank"> @Dywindel</a>.
+											</p>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-4 bg-pri">
+			<div class="row pr-2 pl-2">
+				<div class="col-12 bg-sec">
+					<div class="row p-3">
+						<div class="col-12 bg-ter p-3">
+							<img class="img-fluid rounded" src="/static/img/Bonpsi_LS.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}

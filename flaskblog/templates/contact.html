@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row bg-pri text-ter-tex">
+		<!-- First layer backing -->
+		<div class="col-12 col-md-8 bg-pri">
+			<div class="row pr-2 pl-2">
+				<!-- Second layer backing -->
+				<div class="col-12 bg-sec">
+					<div class="row">
+						<div class="col-12 bg-sec">
+							<div class="row p-3">
+								<div class="col-12 p-3 bg-ter">
+
+                                    <form method="POST" action="">
+                                        <!-- The hidden tag is a form of web protection -->
+                                        {{ form.hidden_tag() }}
+                                        <fieldset class="form-group">
+                                            <legend class="border-bottom mb-4">Contact</legend>
+                                            <div class="form-group">
+                                                {{ form.email.label(class="form-control-label")}}
+                                                {% if form.email.errors %}
+                                                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                                    <div class="invalid-feedback">
+                                                        {% for error in form.email.errors %}
+                                                            <span>{{ error }}</span>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    {{ form.email(class="form-control form-control-lg")}}
+                                                {% endif %}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.content.label(class="form-control-label")}}
+                                                {% if form.content.errors %}
+                                                    {{ form.content(class="form-control form-control-lg is-invalid") }}
+                                                    <div class="invalid-feedback">
+                                                        {% for error in form.content.errors %}
+                                                            <span>{{ error }}</span>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    {{ form.content(class="form-control form-control-lg")}}
+                                                {% endif %}
+                                            </div>
+                                        </fieldset>
+                                        {{ form.submit(class="btn bg-qua a-plain") }}
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

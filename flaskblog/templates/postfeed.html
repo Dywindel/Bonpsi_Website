@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Main Page content, V2 -->
+    <!-- New row for blog and twitter -->
+    <div class="row bg-pri">
+        <!-- Blog Column Border -->
+        <!-- Blog Column Border -->
+        <div class="col-12 col-md-8">
+            <div class="row pl-2 pr-2">
+                <div class="col-12 bg-sec text-sec-tex">
+
+                    <!-- Blog Content -->
+                    <!-- Two different forms of iteration going on here -->
+                    <!-- This one is pagination object -->
+                    {% for item in posts.items %}
+
+                        <!-- Post Content V2 -->
+                        <div class="row">
+                            <div class="col-12 pl-3 pr-3 pt-3 pb-1">
+
+                                <div class="row pr-3 pl-3">
+                                    <div class="col-12 bg-ter p-3">
+                                        <div class="text-left text-ter-tex">
+                                            <img class="img-fluid mb-2" src="{{ url_for('static', filename='blog_pics/' + item.image_file) }}">
+                                            <a href="{{ url_for('posts.post', post_id=item.id) }}">
+                                                <h2>
+                                                    {{ item.title }}
+                                                </h2>
+                                            </a>
+                                            <h6 class="font-italic">{{ item.date_posted.strftime('%A, %B %e, %Y') }}</h6>
+                                            <hr color="#ffffff">
+                                            <p class="text-justify text-ter-tex">{{ item.content|safe }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                    {% for page_num in posts.iter_pages(left_edge=1, left_current=1, right_current=2, right_edge=1) %}
+                        {% if page_num %}
+                            {% if posts.page == page_num %}
+                                <a class="btn bg-qua text-qua-tex mt-3 mb-3" href="{{ url_for('posts.postfeed', page=page_num) }}">{{ page_num }}</a>
+                            {% else %}
+                                <a class="btn bg-ter text-ter-tex mt-3 mb-3" href="{{ url_for('posts.postfeed', page=page_num) }}">{{ page_num }}</a>
+                            {% endif %}
+                        
+                        {% else %}
+                            ---
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Side V2 -->
+        <!-- Main dividing column -->
+        <div class="col-12 col-md-4">
+            <div class="row pr-2 pl-2 pl-md-0 pt-2 pt-md-0">
+                <div class="col-12 bg-sec">
+
+                    <!-- Box 
+                    <div class="row p-3">
+                        <div class="col-12 bg-ter p-3">
+                            
+                             Inside Box 
+                            <div class="text-center text-ter-tex">
+                                <h4>Recent</h4>
+                                <hr color=#ffffff>
+                                <div class="text-left text-ter-tex">
+                                    <h6>Snapto - A Sokoban Puzzle Game</h6>
+                                    <h6>Bonpsi is making games</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> -->
+
+                    <!-- Box 
+                    <div class="row pr-3 pl-3 pb-3">
+                        <div class="col-12 bg-ter p-3">
+                            
+                             Inside Box 
+                            <div class="text-center text-ter-tex">
+                                <h4>Catagories</h4>
+                                <hr color=#ffffff>
+                                <div class="text-left text-ter-tex">
+                                    <span class="badge badge-secondary">Bonpsi</span>
+                                    <span class="badge badge-secondary">Snapto</span>
+                                    <span class="badge badge-secondary">About</span>
+                                    <span class="badge badge-secondary">Mechanics</span>
+                                    <span class="badge badge-secondary">Narrative</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> -->
+
+                    <!-- Box -->
+                    <div class="row pr-3 pl-3 pb-3 pt-3">
+                        <div class="col-12 bg-ter p-3">
+                            
+                            <!-- Inside Box -->
+                            <div class="text-center text-ter-tex">
+                                <h4>Archive</h4>
+                                <hr color=#ffffff>
+                                <div class="text-left text-ter-tex">
+
+                                    <!-- This iterrable object is a basic list -->
+                                    {% for postarchiveitem in postarchive %}
+
+                                        <a href="{{ url_for('posts.post', post_id=postarchiveitem.id) }}">
+                                            <h6>{{ postarchiveitem.title }}</h6>
+                                        </a>
+
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+{% endblock content %}

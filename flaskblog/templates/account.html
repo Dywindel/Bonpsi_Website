@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div class="row bg-pri text-ter-tex">
+		<div class="col-12 col-md-3 bg-pri">
+			<div class="row pb-2 pl-2">
+				<!-- Second layer backing -->
+				<div class="col-12 bg-sec">
+					<div class="row">
+						<div class="col-12 bg-sec">
+							<div class="row p-3">
+								<div class="col-12 p-3 bg-ter">
+									<div class="text-center text-ter-tex">
+										<img class="img-fluid" src="{{ image_file }}">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-9 bg-pri">
+			<div class="row pr-2 pl-2 pb-2">
+				<div class="col-12 bg-sec">
+					<div class="row p-3">
+						<div class="col-12 bg-ter p-3">
+							<h2>{{ current_user.username }}</h2>
+							<p>{{ current_user.email }}</p>
+							<a href="{{ url_for('users.reset_request') }}">
+								<div class="btn bg-qua text-qua-tex">
+									Change Password
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 bg-pri">
+			<div class="row pl-2 pr-2">
+				<!-- Second layer backing -->
+				<div class="col-12 bg-sec">
+					<div class="row">
+						<div class="col-12 bg-sec">
+							<div class="row p-3">
+								<div class="col-12 p-3 bg-ter">
+
+									<form method="POST" action="" enctype="multipart/form-data">
+										<!-- The hidden tag is a form of web protection -->
+										{{ form.hidden_tag() }}
+										<fieldset class="form-group">
+											<legend class="border-bottom mb-4">Account Info</legend>
+											<div class="form-group">
+												<!-- Some of this is just Boostrap style formatting -->
+												{{ form.username.label(class="form-control-label")}}
+												<!-- If the form field had errors on it, print out error message with all errors -->
+												<!-- Otherwise, successful store the data -->
+												{% if form.username.errors %}
+													{{ form.username(class="form-control form-control-lg is-invalid") }}
+													<div class="invalid-feedback">
+														{% for error in form.username.errors %}
+															<span>{{ error }}</span>
+														{% endfor %}
+													</div>
+												{% else %}
+													{{ form.username(class="form-control form-control-lg")}}
+												{% endif %}
+											</div>
+											<div class="form-group">
+												{{ form.email.label(class="form-control-label")}}
+												{% if form.email.errors %}
+													{{ form.email(class="form-control form-control-lg is-invalid") }}
+													<div class="invalid-feedback">
+														{% for error in form.email.errors %}
+															<span>{{ error }}</span>
+														{% endfor %}
+													</div>
+												{% else %}
+													{{ form.email(class="form-control form-control-lg")}}
+												{% endif %}
+											</div>
+											<!-- The FILEFIELD prints errors a little bit differently to a regular field -->
+											<!-- Fuck me -->
+											<div class="form-group">
+												{{ form.picture.label()}}
+												{{ form.picture(class="form-control-file") }}
+												{% if form.picture.errors %}
+													{% for error in form.picture.errors %}
+														<span class="text-danger">{{ error }}</span><br>
+													{% endfor %}
+												{% endif %}
+		
+											</div>
+										</fieldset>
+										{{ form.submit(class="btn bg-qua text-qua-tex") }}
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<!-- Login Page V2 -->
+	<div class="row bg-pri">
+		<div class="col-12">
+
+			<div class="row pl-2 pr-2">
+				<!-- Second layer backing -->
+				<div class="col-12 bg-sec">
+					<div class="row p-3">
+						<div class="col-12 p-3 bg-ter text-ter-tex">
+							
+							<!-- Posting content -->
+							<form method="POST" action="">
+								<!-- The hidden tag is a form of web protection -->
+								{{ form.hidden_tag() }}
+								<fieldset class="form-group">
+									<legend class="border-bottom mb-4">{{ legend }}</legend>
+									<div class="form-group">
+										{{ form.title.label(class="form-control-label")}}
+										{% if form.title.errors %}
+											{{ form.title(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in form.title.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form.title(class="form-control form-control-lg")}}
+										{% endif %}
+									<div class="form-group">
+										{{ form.content.label(class="form-control-label")}}
+										{% if form.content.errors %}
+											{{ form.content(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in pass_form.content.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form.content(class="form-control form-control-lg")}}
+										{% endif %}
+								</fieldset>
+								<div class="form-group">
+									{{ form.submit(class="btn bg-qua text-qua-tex") }}
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}

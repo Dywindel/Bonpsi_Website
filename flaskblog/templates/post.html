@@ -1,0 +1,153 @@
+<!-- Reference the base block -->
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Main Page content, V2 -->
+    <!-- New row for blog and twitter -->
+    <div class="row bg-pri">
+        <!-- Blog Column Border -->
+        <div class="col-12 col-md-8 bg-pri">
+            <div class="row pl-2 pr-2">
+                <div class="col-12 bg-sec">
+
+                    <!-- Post content V2 -->
+                    <div class="row">
+                        <div class="col-12 p-3">
+                            <div class="card bg-ter p-3">
+                                <div class="text-left text-ter-tex">
+                                    <img class="img-fluid pb-2" src="{{ url_for('static', filename='blog_pics/' + post.image_file) }}">
+                                    <h2>{{ post.title }}</h2>
+                                    <h6 class="font-italic">{{ post.date_posted.strftime('%A, %B %e, %Y') }}</h6>
+                                    {% if post.author == current_user %}
+                                        <div>
+                                            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a>
+                                            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                                        </div>
+                                    {% endif %}
+                                    <hr color="#ffffff">
+                                    <p class="text-justify text-ter-tex">{{ post.content|safe }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Content V1
+                    <article class="media content-section">
+                        <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+                        <div class="media-body">
+                            <div class="article-metadata">
+                                <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                                <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                                {% if post.author == current_user %}
+                                    <div>
+                                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a>
+                                        <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <h2 class="article-title">{{ post.title }}</h2>
+                            <p class="article-content">{{ post.content }}</p>
+                        </div>
+                    </article> -->
+
+                    <!-- Modal for the delete post button -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <form action="{{ url_for('posts.delete_post', post_id=post.id) }}" method="POST">
+                                        <input class="btn btn-danger" type="submit" value="Delete">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side V2 -->
+        <!-- Main dividing column -->
+        <div class="col-12 col-md-4">
+            <div class="row row pr-2 pl-2 pl-md-0 pt-2 pt-md-0">
+                <div class="col-12 bg-sec">
+
+                    <!-- Box 
+                    <div class="row p-3">
+                        <div class="col-12 bg-ter p-3">
+                            
+                             Inside Box 
+                            <div class="text-center text-ter-tex">
+                                <h4>Recent</h4>
+                                <hr color=#ffffff>
+                                <div class="text-left text-ter-tex">
+                                    <h6>Snapto - A Sokoban Puzzle Game</h6>
+                                    <h6>Bonpsi is making games</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> -->
+
+                    <!-- Box 
+                    <div class="row pr-3 pl-3 pb-3">
+                        <div class="col-12 bg-ter p-3">
+                            
+                             Inside Box 
+                            <div class="text-center text-ter-tex">
+                                <h4>Catagories</h4>
+                                <hr color=#ffffff>
+                                <div class="text-left text-ter-tex">
+                                    <span class="badge badge-secondary">Bonpsi</span>
+                                    <span class="badge badge-secondary">Snapto</span>
+                                    <span class="badge badge-secondary">About</span>
+                                    <span class="badge badge-secondary">Mechanics</span>
+                                    <span class="badge badge-secondary">Narrative</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> -->
+
+                    <!-- Box -->
+                    <div class="row pr-3 pl-3 pb-3 pt-3">
+                        <div class="col-12 bg-ter p-3">
+                            
+                            <!-- Inside Box -->
+                            <div class="text-center text-ter-tex">
+                                <h4>Archive</h4>
+                                <hr color=#ffffff>
+                                <div class="text-left text-ter-tex">
+
+                                    <!-- This iterrable object is a basic list -->
+                                    {% for postarchiveitem in postarchive %}
+
+                                        <a href="{{ url_for('posts.post', post_id=postarchiveitem.id) }}">
+                                            <div class="text-ter-tex">
+                                                <h6>{{ postarchiveitem.title }}</h6>
+                                            </div>
+                                        </a>
+
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Adding the name content isn't neccessary, but it's a bit easier to read  -->
+{% endblock content %}

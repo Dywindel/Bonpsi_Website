@@ -1,0 +1,205 @@
+a {
+  color: #cecdcd;
+}
+
+a:hover {
+  color: #6d8fb6;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.a-2 {
+  color: #84a8c9;
+}
+
+.a-2:hover {
+  color: #6d8fb6;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.a-plain {
+  color: #cecdcd;
+}
+
+.a-plain:hover {
+  color: #6d8fb6;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+body {
+  background: url("/static/img/Bg_Noise.jpg") center;
+  background-size: cover;
+}
+
+.bg-alpha {
+  background: #00000000;
+  border: #00000000;
+}
+
+.bg-darkbacking {
+  background: #816f57d2;
+  border: #816f57d2;
+}
+
+.bg-test1 {
+  background: #ff0000;
+  border: #ff0000;
+}
+
+.bg-pri {
+  background: #000000;
+  border: #000000;
+}
+
+.bg-sec {
+  background: #10445a;
+  border: #10445a;
+}
+
+.bg-ter {
+  background-color: #205a7d;
+  border: #205a7d;
+}
+
+.bg-qua {
+  background-color: #346c9c;
+  border: #346c9c;
+}
+
+.bg-sm-itchio {
+  background-color: #ff2449ff;
+  border: #ff2449ff;
+}
+
+.bg-sm-facebook {
+  background-color: #3b5998;
+  border: #3b5998;
+}
+
+.bg-sm-twitter {
+  background-color: #00aced;
+  border: #00aced;
+}
+
+.bg-sm-reddit {
+  background-color: #ff4500;
+  border: #ff4500;
+}
+
+.bg-sm-devblog {
+  background-color: #6cc57bd2;
+  border: #6cc57bd2;
+}
+
+.bg-sm-bonpsidemo {
+  background-color: #de7d1cff;
+  border: #de7d1cff;
+}
+
+.bg-alph {
+  background: url("/static/img/Bg_AutumnLeaves_Seemless.png") center scroll;
+}
+
+.bg-alphafade {
+  background: url("/static/img/Space_Seamless_FadetoBlack.png") center scroll;
+}
+
+.bg-alphafade2 {
+  background: url("/static/img/Space_Seamless_FadetoBlack_3.png") no-repeat center center scroll;
+  background-size: cover;
+}
+
+.bg-beta {
+  background: url("/static/img/Bg_OakWood2_Seamless.png") center scroll;
+}
+
+.bg-gamm {
+  background: url("/static/img/Bg_OakWood2_Seamless_Brown.png") center scroll;
+}
+
+.bg-linerule {
+  background: url("/static/img/Spacer_TrianglePatternV2.png") center scroll;
+}
+
+.bg-leafpiletop {
+  background: url("/static/img/Space_Seemless_LeafPile_Top.png") center scroll;
+}
+
+.bg-leafpilebase {
+  background: url("/static/img/Space_Seemless_LeafPile_Base.png") center scroll;
+}
+
+.bg-redtrianglesbase {
+  background: url("/static/img/Bg_LowestBorder_RedTriangles_4.png") center scroll;
+}
+
+.bg-leafpiledark {
+  background: url("/static/img/Bg_Autumn_Gradientbacking_4.png");
+  background-size: 100% 100%;
+}
+
+.bg-leafpiledarkthin {
+  background: url("/static/img/Bg_Autumn_Gradientbacking_4.png");
+  background-size: 100% 100%;
+}
+
+.bg-leafpilemedium {
+  background: url("/static/img/Bg_Autumn_MediumBacking2.png");
+  background-size: 100% 100%;
+}
+
+.bg-leafpilelight {
+  background: url("/static/img/Bg_Autumn_LightBacking1.png");
+  background-size: 100% 100%;
+}
+
+.bg-err-pri {
+  background-color: #310049;
+  border: #310049;
+}
+
+.bg-err-sec {
+  background-color: #412A4C;
+  border: #412A4C;
+}
+
+.text-pri-tex {
+  color: #c4c4c4;
+}
+
+.text-sec-tex {
+  color: #b4b4b4;
+}
+
+.text-ter-tex {
+  color: #cecdcd;
+}
+
+.text-qua-tex {
+  color: #beadad;
+}
+
+h3 {
+  font-family: 'squarefont';
+  color: white;
+  font-size: 18px;
+}
+
+h4 {
+  font-family: 'squarefont';
+  color: white;
+  font-size: 32px;
+}
+
+h5 {
+  font-family: 'squarefont';
+  color: white;
+  font-size: 22px;
+}
+/*# sourceMappingURL=main.css.map */

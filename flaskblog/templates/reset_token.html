@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div class="row bg-pri text-ter-tex">
+		<div class="col-12 bg-pri">
+			<div class="row pl-2 pr-2">
+				<!-- Second layer backing -->
+				<div class="col-12 bg-sec">
+					<div class="row">
+						<div class="col-12 bg-sec">
+							<div class="row p-3">
+								<div class="col-12 p-3 bg-ter">
+
+									<form method="POST" action="">
+										<!-- The hidden tag is a form of web protection -->
+										{{ form.hidden_tag() }}
+										<fieldset class="form-group">
+											<legend class="border-bottom mb-4">Reset Password</legend>
+											<div class="form-group">
+												{{ form.password.label(class="form-control-label")}}
+												{% if form.password.errors %}
+													{{ form.password(class="form-control form-control-lg is-invalid") }}
+													<div class="invalid-feedback">
+														{% for error in form.password.errors %}
+															<span>{{ error }}</span>
+														{% endfor %}
+													</div>
+												{% else %}
+													{{ form.password(class="form-control form-control-lg")}}
+												{% endif %}
+											</div>
+											<div class="form-group">
+												{{ form.confirm_password.label(class="form-control-label")}}
+												{% if form.confirm_password.errors %}
+													{{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+													<div class="invalid-feedback">
+														{% for error in form.confirm_password.errors %}
+															<span>{{ error }}</span>
+														{% endfor %}
+													</div>
+												{% else %}
+													{{ form.confirm_password(class="form-control form-control-lg")}}
+												{% endif %}
+											</div>
+										</fieldset>
+										{{ form.submit(class="btn bg-qua text-qua-tex") }}
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}

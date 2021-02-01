@@ -1,0 +1,263 @@
+@function rc($passcolor) {
+	@return map-get($mycolors, $passcolor);
+}
+
+$maincolor: #10445a;
+
+$mycolors: (
+	pri: #000000,
+	sec: $maincolor,
+	ter: desaturate(adjust-hue(lighten($maincolor, 10%), 5deg), 10%),
+	qua: desaturate(adjust-hue(lighten($maincolor, 20%), 10deg), 20%),
+	qui: #84a8c9,
+	sex: #6d8fb6,
+	err-pri: #310049,
+	err-sec: #412A4C,
+	test1: #ff0000,
+	pri-tex: #c4c4c4,
+	sec-tex: #b4b4b4,
+	ter-tex: #cecdcd,
+	qua-tex: #beadad,
+	alph: #cca438,
+	beta: #b37924,
+	gamm: #5a5a5a88,
+	bgalpha: #00000000,
+	bgdarkbacking: #816f57d2,
+	itchio: #ff2449ff,
+	facebook: #3b5998,
+	twitter: #00aced,
+	reddit: #ff4500,
+	devblog: #6cc57bd2,
+	bonpsidemo: #de7d1cff
+
+);
+
+$mycolorsstyleone: (
+	pri: #000000,
+	sec: #10445a,
+	ter: #2e6379,
+	qua: #2d7b9c,
+	test1: #ff0000,
+	pri-tex: #c4c4c4,
+	sec-tex: #b4b4b4,
+	ter-tex: #d3d3d3,
+	qua-tex: #c4c4c4
+);
+
+a {
+	color: rc(ter-tex);
+	&:hover {
+		color: rc(sex);
+		font-weight: normal;
+		text-decoration: none;
+	}
+}
+
+.a-2 {
+	color: rc(qui);
+	&:hover {
+		color: rc(sex);
+		font-weight: normal;
+		text-decoration: none;
+	}
+}
+
+.a-plain {
+	color: rc(ter-tex);
+	&:hover {
+		color: rc(sex);
+		font-weight: normal;
+		text-decoration: none;
+	}
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+body {
+	background: url('/static/img/Bg_Noise.jpg') center;
+	background-size: cover;
+}
+
+.bg-alpha {
+	background: rc(bgalpha);
+	border: rc(bgalpha);
+}
+
+.bg-darkbacking {
+	background: rc(bgdarkbacking);
+	border: rc(bgdarkbacking);
+}
+
+.bg-test1 {
+	background: rc(test1);
+	border: rc(test1);
+}
+
+.bg-pri {
+	background: rc(pri);
+	border: rc(pri);
+}
+
+.bg-sec {
+	background: rc(sec);
+	border: rc(sec);
+}
+
+.bg-ter {
+	background-color: rc(ter);
+	border: rc(ter);
+}
+
+.bg-qua {
+	background-color: rc(qua);
+	border: rc(qua);
+}
+
+.bg-sm-itchio{
+	background-color: rc(itchio);
+	border: rc(itchio);
+}
+
+.bg-sm-facebook{
+	background-color: rc(facebook);
+	border: rc(facebook);
+}
+
+.bg-sm-twitter{
+	background-color: rc(twitter);
+	border: rc(twitter);
+}
+
+.bg-sm-reddit{
+	background-color: rc(reddit);
+	border: rc(reddit);
+}
+
+.bg-sm-devblog{
+	background-color: rc(devblog);
+	border: rc(devblog);
+}
+
+.bg-sm-bonpsidemo{
+	background-color: rc(bonpsidemo);
+	border: rc(bonpsidemo);
+}
+
+.bg-alph {
+	background: url('/static/img/Bg_AutumnLeaves_Seemless.png') center scroll;
+}
+
+.bg-alphafade {
+	background: url('/static/img/Space_Seamless_FadetoBlack.png') center scroll;
+}
+
+.bg-alphafade2 {
+	background: url('/static/img/Space_Seamless_FadetoBlack_3.png') no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.bg-beta {
+	background: url('/static/img/Bg_OakWood2_Seamless.png') center scroll;
+}
+
+.bg-gamm {
+	background: url('/static/img/Bg_OakWood2_Seamless_Brown.png') center scroll;
+}
+
+.bg-linerule {
+	background: url('/static/img/Spacer_TrianglePatternV2.png') center scroll;
+}
+
+.bg-leafpiletop{
+	background: url('/static/img/Space_Seemless_LeafPile_Top.png') center scroll;
+}
+
+.bg-leafpilebase{
+	background: url('/static/img/Space_Seemless_LeafPile_Base.png') center scroll;
+}
+
+.bg-redtrianglesbase{
+	background: url('/static/img/Bg_LowestBorder_RedTriangles_4.png') center scroll;
+}
+
+.bg-leafpiledark{
+	background: url('/static/img/Bg_Autumn_Gradientbacking_4.png');
+	background-size:100% 100%;
+}
+
+.bg-leafpiledarkthin{
+	background: url('/static/img/Bg_Autumn_Gradientbacking_4.png');
+	background-size:100% 100%;
+}
+
+.bg-leafpilemedium{
+	background: url('/static/img/Bg_Autumn_MediumBacking2.png');
+	background-size:100% 100%;
+}
+
+.bg-leafpilelight{
+	background: url('/static/img/Bg_Autumn_LightBacking1.png');
+	background-size:100% 100%;
+}
+
+.bg-err-pri {
+	background-color: rc(err-pri);
+	border: rc(err-pri);
+}
+
+.bg-err-sec {
+	background-color: rc(err-sec);
+	border: rc(err-sec);
+}
+
+.text-pri-tex {
+	color: rc(pri-tex);
+}
+
+.text-sec-tex {
+	color: rc(sec-tex);
+}
+
+.text-ter-tex {
+	color: rc(ter-tex);
+}
+
+.text-qua-tex {
+	color: rc(qua-tex);
+}
+
+h3 {
+	font-family: 'squarefont';
+	color: white;
+	font-size: 18px;
+}
+
+h4 {
+	font-family: 'squarefont';
+	color: white;
+	font-size: 32px;
+}
+
+h5 {
+	font-family: 'squarefont';
+	color: white;
+	font-size: 22px;
+}
+
+$spacer: 1rem !default;
+$spacers: () !default;
+
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 6)
+)

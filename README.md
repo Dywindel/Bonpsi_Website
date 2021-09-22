@@ -1,2 +1,4 @@
-# Bonpsi_Website
-Scripts for running Bonpsi
+# Bonpsi Webpage
+
+This is a Python-Flask app that runs the Bonpsi.com domain through Heroku.
+
